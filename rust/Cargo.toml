@@ -1,0 +1,13 @@
+[package]
+name = "rust"
+version = "0.1.0"
+authors = ["twistezo <twistezo7@gmail.com>"]
+
+[dependencies]
+serde = "*"
+serde_derive = "*"
+serde_json = "*"
+reqwest = "*"
+chrono = "*"
+hello_utils = { path = "hello_utils" }
+kiss3d_playground = { path = "kiss3d_playground" }

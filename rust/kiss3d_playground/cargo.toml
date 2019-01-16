@@ -1,0 +1,8 @@
+[package]
+name = "kiss3d_playground"
+version = "0.1.0"
+authors = ["twistezo <twistezo7@gmail.com>"]
+
+[dependencies]
+kiss3d = { git = "https://github.com/adahn/kiss3d.git" }
+nalgebra = "0.12"

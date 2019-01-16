@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="site-head">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <h1></h1>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <form>
+                Choose name:
+                <input type="text" class="form-control" name="name" placeholder="Start typing.."></input>
+                <h5></h5>
+                Choose start date:
+                <input type="text" class="form-control" name="start_date" placeholder="dd-mm-yyyy"></input>
+                <h5></h5>
+                Choose end date:
+                <input type="text" class="form-control" name="end_date" placeholder="dd-mm-yyyy"></input>
+                <h5></h5>
+                Choose low price:
+                <input type="text" class="form-control" name="low_price" placeholder="EUR"></input>
+                <h5></h5>
+                Choose high price:
+                <input type="text" class="form-control" name="high_price" placeholder="EUR"></input>
+                <h5></h5>
+                <button class="btn btn-success" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h1></h1>
+    <div class="col-sm-6">
+        <table class="table table-hover">
+            <tbody>
+            <tr class="success" style="font-weight: bold">
+                <td>ID</td>
+                <td>Surname</td>
+                <td>Total amount</td>
+                <td>Orders</td>
+            </tr>
+            <tr th:each="c, i : ${customerTotalAmountResult}">
+                <td th:text="${c.id}"></td>
+                <td th:text="${c.surname}"></td>
+                <td th:text="${c.totalAmount}+ ' EUR'"></td>
+                <td>
+                    <table>
+                        <tr th:each="o, i : ${customerThreeOrders}">
+                            <td th:if="${c.id}==${o.id}" th:text="${o.amount} + ' EUR, ' +${#dates.format(o.date, 'dd MMM yyyy')}"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
