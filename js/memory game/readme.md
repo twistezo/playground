@@ -1,4 +1,4 @@
-### Memory Game written in JavaScript
+## Memory Game written in JavaScript
 
 Run:
 ```

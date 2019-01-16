@@ -1,4 +1,4 @@
-### Java playground
+## Java playground
 
 1. Abstract Classes and Interfaces
 2. Bubble Sort algorithm
